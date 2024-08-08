@@ -1,0 +1,7 @@
+git config --global user.name DRILLE-BAIANO
+git config --global user.email eduardo.silva1180@etec.sp.gov.br
+
+Executar, no terminal, 1 por vez, em ordem:
+    dotnet new mvc -o ECook
+    dotnet new sln --name Ecook
+    dotnet sln add GCook\GCook.csproj
