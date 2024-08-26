@@ -1,6 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+string conexao = builder.configuration.GetConnectionString("Conexao");
+var versao =ServerVersion.AutoDetect(conexao);
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseMySql(conexao, versao)
+);
+
+// Adicionar' um serviço de gedtão de usuários
+builder.services.AddIdentity<IdentityUser, IdentityRole>()
+.AddEntity
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
