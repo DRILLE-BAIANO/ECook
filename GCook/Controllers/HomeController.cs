@@ -15,11 +15,24 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        HomeVM home = new ()
+        {
+            Categorias = _context.Categorias
+               .Where(c =.ExibirHome)
+               .AsNoTracking()
+               .ToList (),
+            Receitas = context.Receitas
+                .Include (r => r.Categorias)
+                .Include (r => r.Ingredientes)
+                .AsNoTracking()
+                .ToList()           
+        }
+        return View(home);
     }
 
     public IActionResult Privacy()
     {
+        
         return View();
     }
 

@@ -270,8 +270,8 @@ public class AppDbSeed
         List<Usuario> usuarios = new(){
             new Usuario(){
                 UsuarioId = users[0].Id,
-                Nome = "Eduardo Henrique Santos Silva",
-                DataNascimento = DateTime.Parse("21/01/2008"),
+                Nome = "Carlos Eduardo Passarelli da Silva",
+                DataNascimento = DateTime.Parse("23/08/2007"),
                 Foto = "/img/usuarios/avatar.png"
             }
         };
